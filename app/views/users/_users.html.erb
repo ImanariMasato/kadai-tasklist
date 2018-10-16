@@ -1,0 +1,15 @@
+<% if users.any? %>
+  <ul class="media-list">
+    <% users.each do |user|%>
+      <li class="media">
+        <div>
+          <%= user.name %>
+        </div>
+        <div>
+          <p><%= link_to 'View Profile', user_path(user) %></p>
+        </div>
+      </li>
+    <% end %>
+    <%= paginate users %>
+  </ul>
+<% end %>
